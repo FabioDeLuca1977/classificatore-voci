@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/classificatore-voci/static/css/main.80e1cab1.css",
+    "main.js": "/classificatore-voci/static/js/main.34655519.js",
+    "index.html": "/classificatore-voci/index.html",
+    "main.80e1cab1.css.map": "/classificatore-voci/static/css/main.80e1cab1.css.map",
+    "main.34655519.js.map": "/classificatore-voci/static/js/main.34655519.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80e1cab1.css",
+    "static/js/main.34655519.js"
+  ]
+}
