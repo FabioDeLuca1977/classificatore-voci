@@ -1,0 +1,59 @@
+﻿# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React build
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+venv/
+env/
+.venv/
+
+# Models e dataset pesanti
+models/saved_models/*.pkl
+models/saved_models/*.joblib
+models/saved_models/*.h5
+datasets/training/*/*.wav
+datasets/training/*/*.mp3
+datasets/training/*/*.m4a
+datasets/testing/*/*.wav
+datasets/testing/*/*.mp3
+datasets/testing/*/*.m4a
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+
+# Package lock files (opzionale, commentare se volete includerli)
+# package-lock.json
+# yarn.lock
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
