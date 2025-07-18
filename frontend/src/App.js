@@ -1,11 +1,11 @@
 import React from 'react';
-import VoiceClassifierApp from './components/VoiceClassifierApp';
+import VoiceLab from './components/VoiceLab';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <VoiceClassifierApp />
+      <VoiceLab />
     </div>
   );
 }
