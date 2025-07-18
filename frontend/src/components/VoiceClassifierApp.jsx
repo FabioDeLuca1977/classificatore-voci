@@ -61,6 +61,40 @@ const VoiceClassifierApp = () => {
     }, 1500);
   };
 
+  const getElementCharacteristics = (element) => {
+    const characteristics = {
+      aria: {
+        rhythm: "3 frasi/unità",
+        volume: "Medio-Alto (65-75 dB)",
+        tone: "In salita ↗️",
+        pauses: "Brevi e dinamiche",
+        pattern: "Leggero, acuto, connessione"
+      },
+      acqua: {
+        rhythm: "2 frasi/unità",
+        volume: "Basso-Intimo (45-55 dB)",
+        tone: "In discesa ↘️",
+        pauses: "Lunghe con trascinamento",
+        pattern: "Fluido, grave, condivisione"
+      },
+      terra: {
+        rhythm: "3 frasi/unità",
+        volume: "Medio (55-65 dB)",
+        tone: "In discesa ↘️",
+        pauses: "Regolari senza trascinamento",
+        pattern: "Solido, concreto, argomentazioni"
+      },
+      fuoco: {
+        rhythm: "4 frasi/unità",
+        volume: "Alto (75-85 dB)",
+        tone: "In salita ↗️",
+        pauses: "Rapide e incalzanti",
+        pattern: "Intenso, pressione, azione"
+      }
+    };
+    return characteristics[element];
+  };
+
   const saveProject = () => {
     const projectData = {
       name: currentProject,
@@ -127,22 +161,62 @@ const VoiceClassifierApp = () => {
                     </span>
                   </div>
                   
-                  <div className="relative">
-                    <input
-                      type="file"
-                      multiple
-                      accept="audio/*"
-                      onChange={(e) => handleDatasetUpload(element, e.target.files)}
-                      className="hidden"
-                      id={`upload-${element}`}
-                    />
-                    <label
-                      htmlFor={`upload-${element}`}
-                      className="flex items-center justify-center w-full h-16 border-2 border-dashed border-white border-opacity-40 rounded-lg cursor-pointer hover:bg-white hover:bg-opacity-10 transition-colors"
-                    >
-                      <Upload size={24} className="mr-2" />
-                      <span>Carica file audio {element}</span>
-                    </label>
+                  <div className="space-y-3">
+                    <div className="relative">
+                      <input
+                        type="file"
+                        multiple
+                        accept="audio/*"
+                        onChange={(e) => handleDatasetUpload(element, e.target.files)}
+                        className="hidden"
+                        id={`upload-${element}`}
+                      />
+                      <label
+                        htmlFor={`upload-${element}`}
+                        className="flex items-center justify-center w-full h-16 border-2 border-dashed border-white border-opacity-40 rounded-lg cursor-pointer hover:bg-white hover:bg-opacity-10 transition-colors"
+                      >
+                        <Upload size={24} className="mr-2" />
+                        <span>Carica file audio {element}</span>
+                      </label>
+                    </div>
+                    
+                    {audioFiles[element].length > 0 && (
+                      <div className="space-y-3">
+                        <div className="bg-white bg-opacity-20 rounded-lg p-3 max-h-24 overflow-y-auto">
+                          <div className="text-sm font-semibold mb-2">File caricati:</div>
+                          {audioFiles[element].map((file, index) => (
+                            <div key={index} className="flex justify-between items-center text-xs mb-1 last:mb-0">
+                              <span className="truncate mr-2">{file.name}</span>
+                              <span className="text-white text-opacity-70">
+                                {(file.size / 1024 / 1024).toFixed(1)} MB
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                        
+                        {/* Caratteristiche Vocali Analizzate */}
+                        <div className="bg-white bg-opacity-15 rounded-lg p-3 text-xs">
+                          <div className="font-semibold mb-2">📊 Caratteristiche {element.toUpperCase()}:</div>
+                          <div className="grid grid-cols-2 gap-2">
+                            <div>
+                              <span className="font-medium">Ritmo:</span> {getElementCharacteristics(element).rhythm}
+                            </div>
+                            <div>
+                              <span className="font-medium">Volume:</span> {getElementCharacteristics(element).volume}
+                            </div>
+                            <div>
+                              <span className="font-medium">Tono:</span> {getElementCharacteristics(element).tone}
+                            </div>
+                            <div>
+                              <span className="font-medium">Pause:</span> {getElementCharacteristics(element).pauses}
+                            </div>
+                            <div className="col-span-2">
+                              <span className="font-medium">Pattern:</span> {getElementCharacteristics(element).pattern}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
