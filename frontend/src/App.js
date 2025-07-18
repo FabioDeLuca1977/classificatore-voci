@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import VoiceClassifierApp from './components/VoiceClassifierApp';
 import './App.css';
 
