@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/classificatore-voci/static/css/main.b2b520ae.css",
-    "main.js": "/classificatore-voci/static/js/main.6cd824fe.js",
+    "main.js": "/classificatore-voci/static/js/main.1c68a81d.js",
     "index.html": "/classificatore-voci/index.html",
     "main.b2b520ae.css.map": "/classificatore-voci/static/css/main.b2b520ae.css.map",
-    "main.6cd824fe.js.map": "/classificatore-voci/static/js/main.6cd824fe.js.map"
+    "main.1c68a81d.js.map": "/classificatore-voci/static/js/main.1c68a81d.js.map"
   },
   "entrypoints": [
     "static/css/main.b2b520ae.css",
-    "static/js/main.6cd824fe.js"
+    "static/js/main.1c68a81d.js"
   ]
 }
