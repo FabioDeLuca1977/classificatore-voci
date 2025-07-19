@@ -34,7 +34,7 @@ const VoiceLab = () => {
   };
 
   // Backend API calls
-  const API_BASE = 'http://localhost:8000';
+  const API_BASE = 'https://0169bc75-90ba-4460-ae39-d231ceb88198-00-eqwc9vlone5w.janeway.replit.dev';
 
   const uploadFiles = async (element, files) => {
     const formData = new FormData();
